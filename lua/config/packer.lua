@@ -3,6 +3,7 @@
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
+
 return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
@@ -12,8 +13,12 @@ return require('packer').startup(function(use)
 
 		-- undo tree
 		use('mbbill/undotree')
-		use('tpope/vim-fugitive')
-
+		-- use('tpope/vim-fugitive')
+		--[[ use {
+    			'kevinhwang91/nvim-fundo',
+    			requires = 'kevinhwang91/promise-async',
+			run = function() require('fundo').install() end
+		} ]]
 
 		use {
 			'VonHeikemen/lsp-zero.nvim',
@@ -49,13 +54,13 @@ return require('packer').startup(function(use)
 		})
 
 		-- my auto cmp
-		use("neovim/nvim-lspconfig")
-		use("hrsh7th/cmp-nvim-lsp")
-		use("hrsh7th/cmp-buffer")
-		use("hrsh7th/cmp-path")
+		-- use("neovim/nvim-lspconfig")
+		-- use("hrsh7th/cmp-nvim-lsp")
+		-- use("hrsh7th/cmp-buffer")
+		-- use("hrsh7th/cmp-path")
 		use("hrsh7th/cmp-cmdline")
-		use("hrsh7th/nvim-cmp")
-		use("hrsh7th/cmp-vsnip")
+		-- use("hrsh7th/nvim-cmp")
+		-- use("hrsh7th/cmp-vsnip")
 		use("hrsh7th/vim-vsnip")
 		use("onsails/lspkind.nvim")
 		-- For snippy users.
@@ -73,7 +78,7 @@ return require('packer').startup(function(use)
 		-- use ("mg979/vim-xtabline")
 
 		-- auto format
-		use ("vim-autoformat/vim-autoformat")
+		-- use ("vim-autoformat/vim-autoformat")
 
 		-- use ("dense-analysis/ale")
 
@@ -85,15 +90,15 @@ return require('packer').startup(function(use)
 			use {"akinsho/toggleterm.nvim", tag = '*', config = function()
 				require("toggleterm").setup()
 			end}
-			use { "0ur4n05/42header.nvim",
-			tag = 'v2.*',
-			config = function()
-				require("toggleterm").setup()
-			end}
+			-- use { "0ur4n05/42header.nvim",
+			-- tag = 'v2.*',
+			-- config = function()
+			-- 	require("toggleterm").setup()
+			-- end}
 
-			use ("vim-syntastic/syntastic")
+			-- use ("vim-syntastic/syntastic")
 
-			use ("alexandregv/norminette-vim")
+			-- use ("alexandregv/norminette-vim")
 
 			use { "anuvyklack/windows.nvim",
 			requires = {
@@ -143,5 +148,6 @@ return require('packer').startup(function(use)
 					require('Comment').setup()
 				end
 			}
+			use ("turbio/bracey.vim")
 	end)
 end)
