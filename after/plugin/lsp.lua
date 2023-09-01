@@ -3,7 +3,7 @@ local lsp = require("lsp-zero")
 lsp.preset("recommended")
 
 lsp.ensure_installed({
---	'tsserver',
+	'tsserver',
 	'clangd',
 })
 
@@ -32,6 +32,7 @@ lsp.set_preferences({
 	--	info = 'I'
 	-- }
 })
+
 
 lsp.on_attach(function(client, bufnr)
 	local opts = {buffer = bufnr, remap = false}
